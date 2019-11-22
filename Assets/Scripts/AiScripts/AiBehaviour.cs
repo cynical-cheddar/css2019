@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AiBehaviour : MonoBehaviour {
 
-	public float cooldown;
-	public float fireRate = 1f;
-	float prevSpeed;
+
+
 	public virtual void setTarget (Transform target){
 	}
    

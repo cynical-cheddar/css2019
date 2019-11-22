@@ -22,7 +22,7 @@ public class playerControllerScript : MonoBehaviour
     {
         rb = this.GetComponentInChildren<Rigidbody>();
         rb.centerOfMass = new Vector3(0, -0.3f, 0);
-        camera = Camera.main;
+        camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
 
     bool canJump()
@@ -35,8 +35,8 @@ public class playerControllerScript : MonoBehaviour
     void Update()
     {
 
-        if(grounded)
-        {
+       // if(grounded)
+      //  {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 forward = camera.transform.forward;
@@ -53,7 +53,7 @@ public class playerControllerScript : MonoBehaviour
             }
             Vector3 movement = forward * moveVertical + right * moveHorizontal;
             rb.AddForce(movement * speed);
-        }
+      //  }
         
     }
 }

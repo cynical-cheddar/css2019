@@ -5,22 +5,40 @@ using UnityEngine;
 public class AiCameraReactor : AiBehaviour
 {
 
+    public LensFlare flare;
+    public float flareIntensitySeen = 1f;
+    float originalFlareIntensity = 0.4f;
     public Transform detectedPlayer;
     public AudioClip detectedSound;
     public AudioSource detectorAudiosource;
 
-    public GameObject cameraHead;
+    public GameObject cameraHeadRotator;
     public bool headTracksPlayerOnDetection = false;
     public float timeUntilSquishySquishy = 4f;
     public bool squishTimerActivated = false;
     public float cooldown = 4f;
+
+    Quaternion originalRot;
     // This is called when a detector has seen you.
     // How should we react?
+
+    void Start(){
+        if(cameraHeadRotator != null){
+            originalRot = cameraHeadRotator.transform.rotation;
+        }
+        if(flare != null){
+            originalFlareIntensity = flare.brightness;
+        }
+        
+    }
 	public override void setTarget (Transform target){
         detectedPlayer = target;
         if(detectorAudiosource != null && detectedSound != null){
             detectorAudiosource.clip = detectedSound;
             detectorAudiosource.Play();
+        }
+        if(flare != null){
+            flare.brightness = flareIntensitySeen;
         }
         startSquishTimer();
 
@@ -28,8 +46,10 @@ public class AiCameraReactor : AiBehaviour
 
     void Update(){
         if(squishTimerActivated){
-            if(headTracksPlayerOnDetection){
-                cameraHead.transform.LookAt(GameObject.FindWithTag("Player").transform);
+            if(headTracksPlayerOnDetection && cameraHeadRotator != null){
+                cameraHeadRotator.transform.LookAt(detectedPlayer);
+
+
             }
             // check that the player is still in vision each frame:
             GetComponent<EnemyVisionAi>().getPlayersInRange();
@@ -48,6 +68,12 @@ public class AiCameraReactor : AiBehaviour
                 // DO THE BIG SQUISH
                 squishPlayer();
             }
+        }
+        else{
+            cameraHeadRotator.transform.rotation = originalRot;
+             if(flare != null){
+                 flare.brightness = originalFlareIntensity;
+             }
         }
     }
 

@@ -9,6 +9,8 @@ public class AiCameraReactor : AiBehaviour
     public AudioClip detectedSound;
     public AudioSource detectorAudiosource;
 
+    public GameObject cameraHead;
+    public bool headTracksPlayerOnDetection = false;
     public float timeUntilSquishySquishy = 4f;
     public bool squishTimerActivated = false;
     public float cooldown = 4f;
@@ -26,7 +28,9 @@ public class AiCameraReactor : AiBehaviour
 
     void Update(){
         if(squishTimerActivated){
-
+            if(headTracksPlayerOnDetection){
+                cameraHead.transform.LookAt(GameObject.FindWithTag("Player").transform);
+            }
             // check that the player is still in vision each frame:
             GetComponent<EnemyVisionAi>().getPlayersInRange();
             GetComponent<EnemyVisionAi>().getPlayersInVision();

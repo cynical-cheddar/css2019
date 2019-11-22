@@ -5,6 +5,9 @@ using UnityEngine.AI;
 public class AiBehaviour : MonoBehaviour {
 
 
+    // this in an interface type class.
+    // to implement an ai behaviour, make a new script and write at the top:
+    // public class newAiBehaviour : AiBehaviour {
 
 	public virtual void setTarget (Transform target){
 	}

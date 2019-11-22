@@ -5,6 +5,7 @@ using UnityEngine;
 public class AiCameraReactor : AiBehaviour
 {
 
+    public GameObject skySquisher;
     public float speed = 5f;
     public LensFlare flare;
     public float flareIntensitySeen = 1f;
@@ -87,6 +88,9 @@ public class AiCameraReactor : AiBehaviour
 
                 // DO THE BIG SQUISH
                 squishPlayer();
+                                squishTimerActivated = false;
+                GetComponent<EnemyVisionAi>().playerSeen = false;
+                GetComponent<EnemyVisionAi>().clearLists();
             }
         }
         else{
@@ -98,7 +102,7 @@ public class AiCameraReactor : AiBehaviour
     }
 
     void squishPlayer(){
-
+        Instantiate(skySquisher, detectedPlayer.position, transform.rotation);
     }
 
     void startSquishTimer(){

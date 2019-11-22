@@ -2408,8 +2408,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330132271}
-  m_LocalRotation: {x: 0.03653535, y: 0.14886358, z: -0.0055039166, w: 0.9881673}
-  m_LocalPosition: {x: -1.4573641, y: 2.4659653, z: -17.110107}
+  m_LocalRotation: {x: 0.23425023, y: 0.11463871, z: -0.027828353, w: 0.96499246}
+  m_LocalPosition: {x: -1.4573641, y: 12.135965, z: -21.60011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2716,6 +2716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77deb60058fc1941a315d75a0e6e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skySquisher: {fileID: 7069834253017749531, guid: f6f03bde1e6840a41a04f51893a39b92,
+    type: 3}
   speed: 10
   flare: {fileID: 110907285}
   flareIntensitySeen: 1
@@ -2724,7 +2726,7 @@ MonoBehaviour:
   detectorAudiosource: {fileID: 1624310185}
   cameraHeadRotator: {fileID: 1913481517}
   headTracksPlayerOnDetection: 1
-  timeUntilSquishySquishy: 2
+  timeUntilSquishySquishy: 8
   squishTimerActivated: 0
   cooldown: 12
 --- !u!1 &1706865018
@@ -3771,8 +3773,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042429158}
-  m_LocalRotation: {x: 0.03653535, y: 0.14886358, z: -0.0055039166, w: 0.9881673}
-  m_LocalPosition: {x: -4.54, y: 13.33, z: 16.95}
+  m_LocalRotation: {x: 0.23425023, y: 0.11463871, z: -0.027828353, w: 0.96499246}
+  m_LocalPosition: {x: -4.54, y: 23, z: 12.459999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2106263703}

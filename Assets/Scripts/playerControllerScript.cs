@@ -41,19 +41,23 @@ public class playerControllerScript : MonoBehaviour
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 forward = camera.transform.forward;
             Vector3 right = camera.transform.right;
+
+            
             forward.y = 0f;
+
             right.y = 0f;
             forward.Normalize();
             right.Normalize();
 
-            if (canJump())
+            if (canJump() && grounded)
             {
                 rb.AddForce(rb.gameObject.transform.up * jump);
 
             }
             Vector3 movement = forward * moveVertical + right * moveHorizontal;
+            Debug.Log(movement.magnitude);
             rb.AddForce(movement * speed);
-      //  }
+      // }
         
     }
 }

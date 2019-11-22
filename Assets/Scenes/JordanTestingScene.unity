@@ -297,7 +297,7 @@ LensFlare:
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: e59f068002a7b47858274b3c71e10ea7, type: 2}
   m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.51
+  m_Brightness: 0.3
   m_FadeSpeed: 3
   m_IgnoreLayers:
     serializedVersion: 2
@@ -2440,16 +2440,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77deb60058fc1941a315d75a0e6e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flare: {fileID: 0}
+  speed: 10
+  flare: {fileID: 110907285}
   flareIntensitySeen: 1
   detectedPlayer: {fileID: 0}
   detectedSound: {fileID: 8300000, guid: 0559d0e024bb91244a7d3e4492218329, type: 3}
   detectorAudiosource: {fileID: 1624310185}
   cameraHeadRotator: {fileID: 1913481517}
   headTracksPlayerOnDetection: 1
-  timeUntilSquishySquishy: 4
+  timeUntilSquishySquishy: 12
   squishTimerActivated: 0
-  cooldown: 4
+  cooldown: 12
 --- !u!1 &1706865018
 GameObject:
   m_ObjectHideFlags: 0

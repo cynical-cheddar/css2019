@@ -5,6 +5,7 @@ using UnityEngine;
 public class AiCameraReactor : AiBehaviour
 {
 
+    public float speed = 5f;
     public LensFlare flare;
     public float flareIntensitySeen = 1f;
     float originalFlareIntensity = 0.4f;
@@ -33,22 +34,41 @@ public class AiCameraReactor : AiBehaviour
     }
 	public override void setTarget (Transform target){
         detectedPlayer = target;
+                startSquishTimer();
         if(detectorAudiosource != null && detectedSound != null){
             detectorAudiosource.clip = detectedSound;
             detectorAudiosource.Play();
         }
         if(flare != null){
-            flare.brightness = flareIntensitySeen;
+           // flare.brightness = flareIntensitySeen;
+           StartCoroutine(lerpFlareBrightness(originalFlareIntensity, flareIntensitySeen, 1f));
         }
-        startSquishTimer();
 
 	}
+
+    IEnumerator lerpFlareBrightness(float start, float end, float time){
+       float ElapsedTime = 0f;
+       float cur = start;
+        while (ElapsedTime <= time)
+        { // until one second passed
+
+            ElapsedTime += Time.deltaTime;
+            cur = Mathf.Lerp(start, end, (ElapsedTime/ time)); // lerp from A to B in one second
+            flare.brightness = cur;
+            yield return null; // wait for next frame
+        } 
+        
+    }
 
     void Update(){
         if(squishTimerActivated){
             if(headTracksPlayerOnDetection && cameraHeadRotator != null){
                 cameraHeadRotator.transform.LookAt(detectedPlayer);
+               // var step = speed * Time.deltaTime;
 
+                // Rotate our transform a step closer to the target's.
+                
+               // cameraHeadRotator.transform.rotation = Quaternion.RotateTowards(cameraHeadRotator.transform.rotation, detectedPlayer.rotation, step);
 
             }
             // check that the player is still in vision each frame:
@@ -70,9 +90,9 @@ public class AiCameraReactor : AiBehaviour
             }
         }
         else{
-            cameraHeadRotator.transform.rotation = originalRot;
+            cameraHeadRotator.transform.rotation = Quaternion.Lerp(cameraHeadRotator.transform.rotation, originalRot, 2f);
              if(flare != null){
-                 flare.brightness = originalFlareIntensity;
+                 StartCoroutine(lerpFlareBrightness(flareIntensitySeen, originalFlareIntensity, 1f));
              }
         }
     }

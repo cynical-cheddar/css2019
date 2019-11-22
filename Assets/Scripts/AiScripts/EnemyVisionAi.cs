@@ -77,7 +77,7 @@ public class EnemyVisionAi : MonoBehaviour
 
 
 
-	void getPlayersInRange(){
+	public void getPlayersInRange(){
 		Collider[] detectedColliders = Physics.OverlapSphere (eyeTransform.position, fltDetectionRadius);
 		// iterate through detected colliders and get the ones that are players and have a team ID
 		playersInRange.Clear();
@@ -91,7 +91,7 @@ public class EnemyVisionAi : MonoBehaviour
 		}
 	}
 }
-	void getPlayersInVision(){
+	public void getPlayersInVision(){
 		playersInVision.Clear ();
 		foreach(Transform player in playersInRange){
 			// calculate dot product

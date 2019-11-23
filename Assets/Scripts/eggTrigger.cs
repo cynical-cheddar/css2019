@@ -16,6 +16,14 @@ public class eggTrigger : MonoBehaviour
             this.transform.parent.gameObject.GetComponentInParent<playerControllerScript>().grounded = true;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "floor")
+        {
+            this.transform.parent.gameObject.GetComponentInParent<playerControllerScript>().grounded = true;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "floor")

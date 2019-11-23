@@ -34,6 +34,7 @@ public class AiCameraReactor : AiBehaviour
         
     }
 	public override void setTarget (Transform target){
+        if(!GetComponent<AudioSource>().isPlaying){
         detectedPlayer = target;
                 startSquishTimer();
         if(detectorAudiosource != null && detectedSound != null){
@@ -46,6 +47,7 @@ public class AiCameraReactor : AiBehaviour
         }
 
 	}
+    }
 
     IEnumerator lerpFlareBrightness(float start, float end, float time){
        float ElapsedTime = 0f;
@@ -64,6 +66,9 @@ public class AiCameraReactor : AiBehaviour
     void Update(){
         if(squishTimerActivated){
             if(headTracksPlayerOnDetection && cameraHeadRotator != null){
+                if(cameraHeadRotator.GetComponent<Animation>() != null){
+                    cameraHeadRotator.GetComponent<Animation>().Stop();
+                }
                 cameraHeadRotator.transform.LookAt(detectedPlayer);
                // var step = speed * Time.deltaTime;
 
@@ -98,6 +103,10 @@ public class AiCameraReactor : AiBehaviour
              if(flare != null){
                  StartCoroutine(lerpFlareBrightness(flareIntensitySeen, originalFlareIntensity, 1f));
              }
+
+                             if(cameraHeadRotator.GetComponent<Animation>() != null){
+                    cameraHeadRotator.GetComponent<Animation>().Play();
+                }
         }
     }
 

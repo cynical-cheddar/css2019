@@ -111,7 +111,7 @@ public class AiCameraReactor : AiBehaviour
     }
 
     void squishPlayer(){
-        Instantiate(skySquisher, detectedPlayer.position, transform.rotation);
+        Instantiate(skySquisher, detectedPlayer.position, Quaternion.identity);
     }
 
     void startSquishTimer(){

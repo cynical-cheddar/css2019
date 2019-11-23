@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalCutscene.unity
     guid: 6d906ac5d647bfb498217f7eb6a39df0
+  - enabled: 1
+    path: Assets/Scenes/georgeLevel.unity
+    guid: 799607b98c8b03642a0f2ce60835b244
   m_configObjects: {}

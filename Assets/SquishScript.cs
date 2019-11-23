@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SquishScript : MonoBehaviour
 {
+    public AudioClip clompSound;
     public float rate = 3f;
     public float dist = 1.5f;
     public float speed = 2f;
@@ -54,6 +55,10 @@ public class SquishScript : MonoBehaviour
             }
             else {
                 rigidbody.MovePosition(Vector3.Lerp(end, start, pos));
+                if(!GetComponent<AudioSource>().isPlaying){
+                    GetComponent<AudioSource>().clip = clompSound;
+                    GetComponent<AudioSource>().Play();
+                }
             }
             if (pos >= dist) {
                 if (recovering) squishing = false;

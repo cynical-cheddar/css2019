@@ -5,6 +5,7 @@ using UnityEngine;
 public class AiCameraReactor : AiBehaviour
 {
 
+    public GameObject skySquisher;
     public float speed = 5f;
     public LensFlare flare;
     public float flareIntensitySeen = 1f;
@@ -33,6 +34,7 @@ public class AiCameraReactor : AiBehaviour
         
     }
 	public override void setTarget (Transform target){
+        if(!GetComponent<AudioSource>().isPlaying){
         detectedPlayer = target;
                 startSquishTimer();
         if(detectorAudiosource != null && detectedSound != null){
@@ -45,6 +47,7 @@ public class AiCameraReactor : AiBehaviour
         }
 
 	}
+    }
 
     IEnumerator lerpFlareBrightness(float start, float end, float time){
        float ElapsedTime = 0f;
@@ -63,6 +66,9 @@ public class AiCameraReactor : AiBehaviour
     void Update(){
         if(squishTimerActivated){
             if(headTracksPlayerOnDetection && cameraHeadRotator != null){
+                if(cameraHeadRotator.GetComponent<Animation>() != null){
+                    cameraHeadRotator.GetComponent<Animation>().Stop();
+                }
                 cameraHeadRotator.transform.LookAt(detectedPlayer);
                // var step = speed * Time.deltaTime;
 
@@ -87,6 +93,9 @@ public class AiCameraReactor : AiBehaviour
 
                 // DO THE BIG SQUISH
                 squishPlayer();
+                                squishTimerActivated = false;
+                GetComponent<EnemyVisionAi>().playerSeen = false;
+                GetComponent<EnemyVisionAi>().clearLists();
             }
         }
         else{
@@ -94,11 +103,15 @@ public class AiCameraReactor : AiBehaviour
              if(flare != null){
                  StartCoroutine(lerpFlareBrightness(flareIntensitySeen, originalFlareIntensity, 1f));
              }
+
+                             if(cameraHeadRotator.GetComponent<Animation>() != null){
+                    cameraHeadRotator.GetComponent<Animation>().Play();
+                }
         }
     }
 
     void squishPlayer(){
-
+        Instantiate(skySquisher, detectedPlayer.position, transform.rotation);
     }
 
     void startSquishTimer(){

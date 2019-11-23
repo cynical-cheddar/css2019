@@ -66,8 +66,8 @@ public class EnemyVisionAi : MonoBehaviour
 
 		Debug.Log ("We have raycasted");
 		if (hitTransform != null) {
-			Debug.Log (player);
-			Debug.Log (hitTransform);
+		//	Debug.Log (player);
+		//	Debug.Log (hitTransform);
 			if (hitTransform.gameObject == player) {
 				return true;
 			}

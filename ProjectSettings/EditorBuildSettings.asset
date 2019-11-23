@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tutorialDemoScene.unity
     guid: 0f55375c667a0a84cb8b1c1fc1cedc90
+  - enabled: 1
+    path: Assets/Scenes/JordanLevel.unity
+    guid: f9dc0a81b4589444a8e916471e719e4f
+  - enabled: 1
+    path: Assets/Scenes/FinalCutscene.unity
+    guid: 6d906ac5d647bfb498217f7eb6a39df0
   m_configObjects: {}

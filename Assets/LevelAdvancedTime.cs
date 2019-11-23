@@ -13,6 +13,11 @@ public class LevelAdvancedTime : MonoBehaviour
         Invoke("advance", time);
     }
 
+void Update(){
+    if(Input.GetKeyDown(KeyCode.Escape)){
+        advance();
+    }
+}
     // Update is called once per frame
     void advance(){
         SceneManager.LoadScene(level);

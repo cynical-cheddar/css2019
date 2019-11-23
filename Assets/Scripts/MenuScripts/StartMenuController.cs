@@ -6,15 +6,22 @@ using UnityEngine.SceneManagement;
 public class StartMenuController : MonoBehaviour
 {
     public string firstScene;
+    public string DebugScene;
 
    public void PlayGame()
     {
         SceneManager.LoadScene(firstScene);
     }
 
-    public void Quitgame()
+    public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void DebugGame()
+    {
+        Debug.Log("Debug mode");
+        SceneManager.LoadScene(DebugScene);
     }
 }

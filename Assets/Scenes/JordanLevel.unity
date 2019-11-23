@@ -11000,7 +11000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112, type: 2}
   m_AmplitudeGain: 1
-  m_FrequencyGain: 1
+  m_FrequencyGain: 2
 --- !u!114 &884215547
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -35,7 +35,7 @@ Rigidbody:
   m_GameObject: {fileID: 3796908978777482173}
   serializedVersion: 2
   m_Mass: 0.8
-  m_Drag: 0.1
+  m_Drag: 0.2
   m_AngularDrag: 0.06
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -56,6 +56,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -2432090755550338912, guid: 1050fd23f0952304abb71bbcecec212a, type: 3}
+--- !u!114 &461057885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796908978777482173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3768f26e0e4fcd44b9a080d2c9ff605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathUI: {fileID: 1157785679298266735, guid: f6a94adf810e60f4abf706a0261cf6e2, type: 3}
+  squishGib: {fileID: 194142, guid: cc5d0b4712dca8747bec62af75e67200, type: 3}
+  squishSound: {fileID: 8300000, guid: 6575db267961bb74eaa8215515c569db, type: 3}
 --- !u!1 &5156825599121871690
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
-  speed: 4
+  speed: 5
   jump: 80
   jumpable: 1
   jumpangle: 45

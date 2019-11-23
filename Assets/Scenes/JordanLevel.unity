@@ -6002,16 +6002,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5156825599121871689, guid: 1594d29a12ccdb2419c88852efcd53de,
-        type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156825597943862758, guid: 1594d29a12ccdb2419c88852efcd53de,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1594d29a12ccdb2419c88852efcd53de, type: 3}
 --- !u!1 &462468449
@@ -17071,8 +17061,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330132271}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0056984047, y: 0.99336874, z: -0.099866964, w: -0.05668141}
+  m_LocalPosition: {x: 15.169905, y: 20.162605, z: 24.77855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25867,7 +25857,7 @@ PrefabInstance:
     - target: {fileID: 3018232154972587957, guid: e78fa397f4e5743deb29643be25666fb,
         type: 3}
       propertyPath: dist
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 835450542, guid: e78fa397f4e5743deb29643be25666fb, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value

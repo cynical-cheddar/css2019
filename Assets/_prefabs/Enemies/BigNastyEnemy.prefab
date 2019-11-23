@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806252341548381398}
-  m_LocalRotation: {x: -0.7071062, y: 0.000000014901152, z: 0.00000004470346, w: 0.70710737}
+  m_LocalRotation: {x: -0.7704556, y: 0.000106602834, z: 0.0011817358, w: 0.63749254}
   m_LocalPosition: {x: 0, y: 0.16790232, z: -0.0010813698}
   m_LocalScale: {x: 0.21399023, y: 0.10895024, z: 0.45712242}
   m_Children:
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 6806252342323487173}
   m_Father: {fileID: 6806252341814297478}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -126.178, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: -79.21001, y: -179.48401, z: 179.589}
 --- !u!33 &6806252341548381403
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806252341548381398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -366,7 +366,7 @@ MonoBehaviour:
   eyeTransform: {fileID: 6806252341548381401}
   fltDetectionRadius: 18
   fltDetectionRadiusIfHit: 100
-  dotProductThreshold: 0.93
+  dotProductThreshold: 0.95
   alertNearbyAlliesIfHit: 1
   fltNearbyAlliesAlertRadius: 20
   playersInRange: []
@@ -395,9 +395,9 @@ MonoBehaviour:
   detectorAudiosource: {fileID: 6806252342889017336}
   cameraHeadRotator: {fileID: 6806252342649653116}
   headTracksPlayerOnDetection: 1
-  timeUntilSquishySquishy: 8
+  timeUntilSquishySquishy: 4
   squishTimerActivated: 0
-  cooldown: 12
+  cooldown: 4
 --- !u!82 &6806252342889017336
 AudioSource:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 3
-  m_Range: 20
+  m_Range: 106.9
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -789,10 +789,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: ad17401c693dab141aa405865c3b1e07, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.4285736
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: ad17401c693dab141aa405865c3b1e07, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad17401c693dab141aa405865c3b1e07, type: 3}
